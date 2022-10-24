@@ -1,4 +1,5 @@
 <main class="auth">
+    <img src="../build/img/logo.svg" alt="logo" class="auth__logo">
     <h2 class="auth__heading"><?php echo $titulo; ?></h2>
     <p class="auth__texto">Recuperar acceso a tu cuenta de <b>Ticket Reserve</b></p>
 

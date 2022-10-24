@@ -1,4 +1,5 @@
 <main class="auth">
+    <img src="../build/img/logo.svg" alt="logo" class="auth__logo">
     <h2 class="auth__heading"><?php echo $titulo; ?></h2>
 
     <form class="formulario">

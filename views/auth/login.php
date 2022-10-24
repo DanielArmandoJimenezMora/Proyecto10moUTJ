@@ -1,5 +1,6 @@
 <main class="auth">
     
+    <img src="../build/img/logo.svg" alt="logo" class="auth__logo">
     <h2 class="auth__heading"><?= $titulo ?></h2>
     <p class="auth__texto">Inicia sesión en <b>Ticket Reserve</b></p>
 
