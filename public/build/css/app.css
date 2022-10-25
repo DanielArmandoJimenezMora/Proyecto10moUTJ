@@ -423,7 +423,7 @@ h3 {
 
 .header {
   min-height: 60rem;
-  background-image: url(../img/grafico.svg), url(../img/grafico.svg), linear-gradient(to right, #1a1b15, rgba(26, 27, 21, 0.5)), url(../img/banner.jpeg);
+  background-image: url(../img/grafico.svg), url(../img/grafico.svg), linear-gradient(to right, #1a1b15, rgba(26, 27, 21, 0.2)), url(../img/banner1.jpeg);
   background-repeat: no-repeat;
   background-size: 400px, 400px, cover, cover;
   background-position: top left, bottom right, center center, center center;
@@ -488,7 +488,7 @@ h3 {
   font-size: 2rem;
 }
 .header__boton {
-  background-color: #00c8c2;
+  background-color: #007df4;
   padding: 1.5rem 4rem;
   color: #ffffff;
   font-size: 1.8rem;
@@ -500,9 +500,10 @@ h3 {
   width: 100%;
   display: inline-block;
   margin: 2rem 0;
+  border-radius: 5px;
 }
 .header__boton:hover {
-  background-color: #009591;
+  background-color: #0063c1;
   cursor: pointer;
 }
 @media (min-width: 768px) {
@@ -512,7 +513,7 @@ h3 {
 }
 
 .barra {
-  background-color: #64b3c5;
+  background-color: #007df4;
 }
 .barra__contenido {
   width: min(95%, 120rem);
@@ -551,13 +552,12 @@ h3 {
 }
 .navegacion__enlace {
   color: #ffffff;
-  font-size: 2.2rem;
+  font-size: 1, 5rem;
   padding: 2rem;
-  font-weight: 900;
   text-align: center;
 }
 .navegacion__enlace:hover {
   background-color: #ffffff;
-  color: #64b3c5;
+  color: #007df4;
 }
 /*# sourceMappingURL=app.css.map */

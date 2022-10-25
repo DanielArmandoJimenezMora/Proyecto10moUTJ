@@ -2,7 +2,8 @@
 @use 'base/mixins' as m;
 
 .barra {
-  background-color: v.$primario;
+  background-color: v.$azul;
+  //background-color: v.$primario;
   &__contenido {
     @include m.contenedor;
     display: flex;

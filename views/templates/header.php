@@ -13,8 +13,8 @@
                     </h1>
                 </div>
             </a>
-            <p class="header__texto">Diciembre de 2022</p>
-            <p class="header__texto header__texto--modalidad">En linea - Presencial</p>
+            <p class="header__texto">31 de Diciembre de 2022</p>
+            <p class="header__texto header__texto--modalidad">Cena de fin de año</p>
 
             <a href="/registro" class="header__boton">Comprar pase</a>
         </div>
