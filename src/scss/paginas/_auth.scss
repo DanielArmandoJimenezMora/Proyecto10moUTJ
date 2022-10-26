@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 
-//border: 1px solid red;
-
 @keyframes pan {
   100% {
     background-position: 15% 50%;
@@ -26,7 +24,7 @@
   background-image: url(../img/low-poly-grid.svg);
   background-repeat: no-repeat;
   background-size: cover;
-  animation: pan 3s infinite alternate linear;
+  animation: pan 6s infinite alternate linear;
 
   &__logo {
     width: 22rem;
