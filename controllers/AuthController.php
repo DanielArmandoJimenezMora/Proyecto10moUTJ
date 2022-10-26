@@ -161,7 +161,7 @@ class AuthController
 
         // Muestra la vista
         $router->render('auth/olvide', [
-            'titulo' => 'Olvide mi Password',
+            'titulo' => 'Olvide mi Contraseña',
             'alertas' => $alertas,
         ]);
     }
@@ -203,7 +203,7 @@ class AuthController
 
                 // Redireccionar
                 if ($resultado) {
-                    header('Location: /');
+                    header('Location: /login');
                 }
             }
         }
@@ -212,7 +212,7 @@ class AuthController
 
         // Muestra la vista
         $router->render('auth/reestablecer', [
-            'titulo' => 'Reestablecer Password',
+            'titulo' => 'Reestablecer Contraseña',
             'alertas' => $alertas,
             'token_valido' => $token_valido,
         ]);
@@ -238,7 +238,10 @@ class AuthController
 
         if (empty($usuario)) {
             // No se encontró un usuario con ese token
-            Usuario::setAlerta('error', 'Token No Válido');
+            Usuario::setAlerta(
+                'error',
+                'Token No Válido, la cuenta no se confirmó'
+            );
         } else {
             // Confirmar la cuenta
             $usuario->confirmado = 1;
@@ -248,7 +251,7 @@ class AuthController
             // Guardar en la BD
             $usuario->guardar();
 
-            Usuario::setAlerta('exito', 'Cuenta Comprobada Correctamente');
+            Usuario::setAlerta('exito', 'Cuenta Comprobada éxitosamente');
         }
 
         $router->render('auth/confirmar', [

@@ -67,9 +67,9 @@ class Email
         $mail->Username = $_ENV['EMAIL_USER'];
         $mail->Password = $_ENV['EMAIL_PASS'];
 
-        $mail->setFrom('cuentas@devwebcamp.com');
+        $mail->setFrom('cuentas@ticketreserve.com');
         $mail->addAddress($this->email, $this->nombre);
-        $mail->Subject = 'Reestablece tu password';
+        $mail->Subject = 'Reestablece tu contraseña';
 
         // Set HTML
         $mail->isHTML(true);
@@ -83,7 +83,7 @@ class Email
         $contenido .=
             "<p>Presiona aquí: <a href='" .
             $_ENV['HOST'] .
-            '/recuperar?token=' .
+            '/reestablecer?token=' .
             $this->token .
             "'>Reestablecer Password</a>";
         $contenido .=

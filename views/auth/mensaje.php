@@ -6,10 +6,6 @@
         <p class="auth__texto">
             Hemos enviamos un mensaje a tu correo, revisa tu bandeja de entrada para confirmar tu cuenta.
         </p>
-
-
-
-
     </div>
 
 </main>
