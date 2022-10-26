@@ -411,6 +411,10 @@ h3 {
   gap: 1rem;
   margin: 1.5rem 0;
 }
+.formulario__obligatorio {
+  font-weight: 700;
+  color: red;
+}
 .formulario__label {
   display: block;
   font-size: 1.8rem;

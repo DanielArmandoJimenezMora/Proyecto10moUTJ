@@ -9,7 +9,7 @@
         <form method="POST" action="/registro" class="formulario">
 
             <div class="formulario__campo">
-                <label for="nombre" class="formulario__label">Nombre</label>
+                <label for="nombre" class="formulario__label"><span class="formulario__obligatorio">* </span>Nombre</label>
                 <input 
                         type="text"
                         class="formulario__input"
@@ -21,7 +21,7 @@
             </div>
 
             <div class="formulario__campo">
-                <label for="apellido" class="formulario__label">Apellido</label>
+                <label for="apellido" class="formulario__label"><span class="formulario__obligatorio">* </span>Apellido</label>
                 <input 
                         type="text"
                         class="formulario__input"
@@ -33,7 +33,7 @@
             </div>
 
             <div class="formulario__campo">
-                <label for="email" class="formulario__label">Email</label>
+                <label for="email" class="formulario__label"><span class="formulario__obligatorio">* </span>Email</label>
                 <input 
                         type="email"
                         class="formulario__input"
@@ -45,7 +45,7 @@
             </div>
 
             <div class="formulario__campo">
-                <label for="password" class="formulario__label">Password</label>
+                <label for="password" class="formulario__label"><span class="formulario__obligatorio">* </span>Password</label>
                 <input 
                         type="password"
                         class="formulario__input"
@@ -56,7 +56,7 @@
             </div>
 
             <div class="formulario__campo">
-                <label for="password2" class="formulario__label">Repetir Password</label>
+                <label for="password2" class="formulario__label"><span class="formulario__obligatorio">* </span>Repetir Password</label>
                 <input 
                         type="password"
                         class="formulario__input"

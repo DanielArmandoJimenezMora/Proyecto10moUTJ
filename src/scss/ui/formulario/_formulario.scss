@@ -10,6 +10,10 @@
     gap: 1rem;
     margin: 1.5rem 0;
   }
+  &__obligatorio {
+    font-weight: v.$bold;
+    color: red;
+  }
   &__label {
     display: block;
     font-size: 1.8rem;
