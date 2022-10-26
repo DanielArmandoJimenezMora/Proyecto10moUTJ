@@ -1,11 +1,14 @@
 <main class="auth">
     
+
+    
     <div class="login-card">
         <img src="../build/img/logo.svg" alt="logo" class="auth__logo">
         <h2 class="auth__heading"><?= $titulo ?></h2>
         <p class="auth__texto">Inicia sesión en <b>Ticket Reserve</b></p>
+        <?php require_once __DIR__ . '/../templates/alertas.php'; ?>
 
-        <form class="formulario">
+        <form method="POST" action="/login" class="formulario">
             <div class="formulario__campo">
                 <label for="email" class="formulario__label">Email</label>
                 <input 
