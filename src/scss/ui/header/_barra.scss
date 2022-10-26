@@ -2,7 +2,7 @@
 @use 'base/mixins' as m;
 
 .barra {
-  background-color: v.$azul;
+  background-color: v.$dark;
   //background-color: v.$primario;
   &__contenido {
     @include m.contenedor;

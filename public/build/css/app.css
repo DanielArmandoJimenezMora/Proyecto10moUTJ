@@ -358,9 +358,29 @@ h3 {
   text-align: center;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+@keyframes pan {
+  100% {
+    background-position: 15% 50%;
+  }
+}
+@media (width = 500px) {
+  body {
+    padding: 0;
+  }
+}
 .auth {
-  width: min(95%, 60rem);
-  margin: 0 auto;
+  margin-bottom: -5rem;
+  display: grid;
+  place-items: center;
+  padding: 0 24px;
+  background-image: url(../img/low-poly-grid.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: pan 3s infinite alternate linear;
 }
 .auth__logo {
   width: 22rem;
@@ -369,6 +389,16 @@ h3 {
   margin-top: 5rem;
   margin-bottom: -5rem;
   text-align: center;
+}
+.auth .login-card {
+  padding: 0px 30px 44px;
+  border-radius: 24px;
+  background: #ffffff;
+  margin: 5rem;
+  border: 2px solid #ebebeb;
+}
+.auth .acciones {
+  gap: 5rem;
 }
 
 .formulario {
@@ -513,7 +543,7 @@ h3 {
 }
 
 .barra {
-  background-color: #007df4;
+  background-color: #00101c;
 }
 .barra__contenido {
   width: min(95%, 120rem);
@@ -558,11 +588,11 @@ h3 {
 }
 .navegacion__enlace:hover {
   background-color: #ffffff;
-  color: #007df4;
+  color: #00101c;
 }
 
 .footer {
-  background-color: #007df4;
+  background-color: #00101c;
   margin-top: 5rem;
   padding-top: 3rem;
   color: #ffffff;
@@ -600,7 +630,7 @@ h3 {
   }
 }
 .footer__copyright {
-  background-color: #0063c1;
+  background-color: black;
   margin: 3rem 0 0 0;
   padding: 2rem 0;
   text-align: center;
