@@ -19,7 +19,6 @@ class Router
 
     public function comprobarRutas()
     {
-
         $url_actual = $_SERVER['PATH_INFO'] ?? '/';
         $method = $_SERVER['REQUEST_METHOD'];
 
@@ -29,25 +28,31 @@ class Router
             $fn = $this->postRoutes[$url_actual] ?? null;
         }
 
-        if ( $fn ) {
+        if ($fn) {
             call_user_func($fn, $this);
         } else {
-            echo "Página No Encontrada o Ruta no válida";
+            echo 'Página No Encontrada o Ruta no válida';
         }
     }
 
     public function render($view, $datos = [])
     {
         foreach ($datos as $key => $value) {
-            $$key = $value; 
+            $$key = $value;
         }
 
-        ob_start(); 
+        ob_start();
 
         include_once __DIR__ . "/views/$view.php";
 
         $contenido = ob_get_clean(); // Limpia el Buffer
 
-        include_once __DIR__ . '/views/layout.php';
+        // Utilizar el layout de acuerdo a la url
+        $url_actual = $_SERVER['PATH_INFO'] ?? '/';
+        if (str_contains($url_actual, '/admin')) {
+            include_once __DIR__ . '/views/admin-layout.php';
+        } else {
+            include_once __DIR__ . '/views/layout.php';
+        }
     }
 }
