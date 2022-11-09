@@ -62,6 +62,9 @@
       border-bottom-left-radius: 0;
     }
   }
+  &__listado {
+    @include m.tags;
+  }
   &__submit {
     @include m.boton(v.$primario, v.$blanco);
     border-radius: 0.5rem;

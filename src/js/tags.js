@@ -1,9 +1,12 @@
 ;(function () {
   const tagsInput = document.querySelector('#tags__input')
 
-  let tags = []
-
   if (tagsInput) {
+    const tagsDiv = document.querySelector('#tags')
+    const tagsInputHidden = document.querySelector('[name="tags"]')
+
+    let tags = []
+
     // Escuchar cambios en el input
     tagsInput.addEventListener('keypress', guardarTag)
 
@@ -15,8 +18,32 @@
         e.preventDefault()
         tags = [...tags, e.target.value.trim()]
         tagsInput.value = ''
-        console.log(tags)
+
+        mostrarTag()
       }
+    }
+
+    function mostrarTag() {
+      tagsDiv.textContent = ''
+      tags.forEach((tag) => {
+        const etiqueta = document.createElement('LI')
+        etiqueta.classList.add('formulario__tag')
+        etiqueta.textContent = tag
+        etiqueta.ondblclick = eliminarTag
+        tagsDiv.appendChild(etiqueta)
+      })
+      actualizarInputHidden()
+    }
+
+    function eliminarTag(e) {
+      e.target.remove()
+
+      tags = tags.filter((tag) => tag !== e.target.textContent)
+      actualizarInputHidden()
+    }
+
+    function actualizarInputHidden() {
+      tagsInputHidden.value = tags.toString()
     }
   }
 })()
