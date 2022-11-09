@@ -41,6 +41,10 @@ $router->get('/admin/restaurantes/crear', [
     RestaurantesController::class,
     'crear',
 ]);
+$router->post('/admin/restaurantes/crear', [
+    RestaurantesController::class,
+    'crear',
+]);
 
 $router->get('/admin/eventos', [EventosController::class, 'index']);
 

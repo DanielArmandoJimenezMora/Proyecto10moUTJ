@@ -1,7 +1,7 @@
 <fieldset class="formulario__fieldset">
     <legend class="formulario__legend">Información del Restaurante</legend>
     <div class="formulario__campo">
-        <label for="nombre" class="formulario__label">Nombre del restaurante</label>
+        <label for="nombre" class="formulario__label"><span class="formulario__obligatorio">* </span>Nombre del restaurante</label>
         <input 
             type="text" 
             class="formulario__input"
@@ -13,7 +13,7 @@
     </div>
 
     <div class="formulario__campo">
-        <label for="sucursal" class="formulario__label">Sucursal</label>
+        <label for="sucursal" class="formulario__label"><span class="formulario__obligatorio">* </span>Sucursal</label>
         <input 
             type="text" 
             class="formulario__input"
@@ -25,7 +25,7 @@
     </div>
 
     <div class="formulario__campo">
-        <label for="domicilio" class="formulario__label">Domicilio</label>
+        <label for="domicilio" class="formulario__label"><span class="formulario__obligatorio">* </span>Domicilio</label>
         <input 
             type="text" 
             class="formulario__input"
@@ -37,7 +37,7 @@
     </div>
 
     <div class="formulario__campo">
-        <label for="imagen" class="formulario__label">Imagen</label>
+        <label for="imagen" class="formulario__label"><span class="formulario__obligatorio">* </span>Imagen</label>
         <input 
             type="file" 
             class="formulario__input formulario__input--file"
