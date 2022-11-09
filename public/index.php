@@ -37,6 +37,10 @@ $router->get('/confirmar-cuenta', [AuthController::class, 'confirmar']);
 $router->get('/admin/dashboard', [DashboardController::class, 'index']);
 
 $router->get('/admin/restaurantes', [RestaurantesController::class, 'index']);
+$router->get('/admin/restaurantes/crear', [
+    RestaurantesController::class,
+    'crear',
+]);
 
 $router->get('/admin/eventos', [EventosController::class, 'index']);
 

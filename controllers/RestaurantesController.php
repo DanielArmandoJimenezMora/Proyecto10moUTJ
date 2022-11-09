@@ -12,4 +12,13 @@ class RestaurantesController
             'titulo' => 'Restaurantes / Sucursales',
         ]);
     }
+    public static function crear(Router $router)
+    {
+        $alertas = [];
+
+        $router->render('admin/restaurantes/crear', [
+            'titulo' => 'Registrar Restaurante',
+            'alertas' => $alertas,
+        ]);
+    }
 }

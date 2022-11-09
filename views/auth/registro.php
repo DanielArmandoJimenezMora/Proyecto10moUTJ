@@ -45,22 +45,22 @@
             </div>
 
             <div class="formulario__campo">
-                <label for="password" class="formulario__label"><span class="formulario__obligatorio">* </span>Password</label>
+                <label for="password" class="formulario__label"><span class="formulario__obligatorio">* </span>Contraseña</label>
                 <input 
                         type="password"
                         class="formulario__input"
-                        placeholder="Password"
+                        placeholder="Contraseña"
                         id="password"
                         name="password"
                     >
             </div>
 
             <div class="formulario__campo">
-                <label for="password2" class="formulario__label"><span class="formulario__obligatorio">* </span>Repetir Password</label>
+                <label for="password2" class="formulario__label"><span class="formulario__obligatorio">* </span>Repetir Contraseña</label>
                 <input 
                         type="password"
                         class="formulario__input"
-                        placeholder="Repetir Password"
+                        placeholder="Repetir Contraseña"
                         id="password2"
                         name="password2"
                     >
@@ -72,7 +72,7 @@
 
         <div class="acciones">
             <a href="/login" class="acciones__enlace">¿Ya tienes cuenta? Iniciar Sesión</a>
-            <a href="/olvide" class="acciones__enlace">¿Olvidaste tu password?</a>
+            <a href="/olvide" class="acciones__enlace">¿Olvidaste tu contraseña?</a>
         </div>
     </div>
 </main>
