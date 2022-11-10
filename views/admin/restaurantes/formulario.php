@@ -51,7 +51,7 @@
     <legend class="formulario__legend">Información adicional</legend>
 
     <div class="formulario__campo">
-        <label for="tags_input" class="formulario__label">Especialidades<span class="formulario__label--ayuda"> [Agregar presionando tecla de coma (,)]</span></label>
+        <label for="tags_input" class="formulario__label"><span class="formulario__obligatorio">* </span>Especialidades<span class="formulario__label--ayuda"> [Agregar presionando tecla de coma (,)]</span></label>
         <input 
             type="text" 
             class="formulario__input"

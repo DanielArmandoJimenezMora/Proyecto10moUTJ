@@ -10,8 +10,11 @@ class RestaurantesController
 {
     public static function index(Router $router)
     {
+        $restaurantes = Restaurante::all();
+
         $router->render('admin/restaurantes/index', [
             'titulo' => 'Restaurantes / Sucursales',
+            'restaurantes' => $restaurantes,
         ]);
     }
     public static function crear(Router $router)

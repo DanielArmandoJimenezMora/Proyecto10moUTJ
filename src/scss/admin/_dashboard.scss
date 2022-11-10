@@ -116,4 +116,9 @@
     @extend .dashboard__contenedor;
     @include m.contenedor-md;
   }
+  &__noData {
+    width: 40rem;
+    display: flex;
+    margin: 0 auto;
+  }
 }
