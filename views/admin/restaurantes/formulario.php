@@ -45,6 +45,23 @@
             name="imagen"
         >
     </div>
+
+    <?php if (isset($restaurante->imagen_actual)) { ?>
+         <p class="formulario__texto">Imagen Actual:</p>
+         <div class="formulario__imagen">
+            <picture>
+                <source src="<?php echo $_ENV['HOST'] .
+                    '/img/restaurantes/' .
+                    $restaurante->imagen; ?>.webp" type="image/webp">
+                <source src="<?php echo $_ENV['HOST'] .
+                    '/img/restaurantes/' .
+                    $restaurante->imagen; ?>.png" type="image/png">
+                    <img src="<?php echo $_ENV['HOST'] .
+                        '/img/restaurantes/' .
+                        $restaurante->imagen; ?>.png" alt="restaurante">
+            </picture>
+         </div>
+    <?php } ?>
 </fieldset>
 
 <fieldset class="formulario__fieldset">

@@ -78,4 +78,31 @@ class RestaurantesController
             'restaurante' => $restaurante,
         ]);
     }
+
+    public static function editar(Router $router)
+    {
+        $alertas = [];
+        //validar ID
+        $id = $_GET['id'];
+        $id = filter_var($id, FILTER_VALIDATE_INT);
+
+        if (!$id) {
+            header('Location: /admin/restaurantes');
+        }
+
+        // Obtener el restaurante a editar
+        $restaurante = Restaurante::find($id);
+
+        if (!$restaurante) {
+            header('Location: /admin/restaurantes');
+        }
+
+        $restaurante->imagen_actual = $restaurante->imagen;
+
+        $router->render('admin/restaurantes/editar', [
+            'titulo' => 'Actualizar Restaurante',
+            'alertas' => $alertas,
+            'restaurante' => $restaurante,
+        ]);
+    }
 }
