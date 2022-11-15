@@ -96,7 +96,7 @@
                 class="formulario__input--sociales"
                 name="redes[facebook]"
                 placeholder="Facebook"
-                value="<?php echo $restaurante->facebook ?? ''; ?>"
+                value="<?php echo $redes->facebook ?? ''; ?>"
             >
        </div>
     </div>
@@ -111,7 +111,7 @@
                 class="formulario__input--sociales"
                 name="redes[twitter]"
                 placeholder="Twitter"
-                value="<?php echo $restaurante->twitter ?? ''; ?>"
+                value="<?php echo $redes->twitter ?? ''; ?>"
             >
        </div>
     </div>
@@ -126,7 +126,7 @@
                 class="formulario__input--sociales"
                 name="redes[youtube]"
                 placeholder="YouTube"
-                value="<?php echo $restaurante->youtube ?? ''; ?>"
+                value="<?php echo $redes->youtube ?? ''; ?>"
             >
        </div>
     </div>
@@ -141,7 +141,7 @@
                 class="formulario__input--sociales"
                 name="redes[instagram]"
                 placeholder="Instagram"
-                value="<?php echo $restaurante->instagram ?? ''; ?>"
+                value="<?php echo $redes->instagram ?? ''; ?>"
             >
        </div>
     </div>
@@ -156,7 +156,7 @@
                 class="formulario__input--sociales"
                 name="redes[tiktok]"
                 placeholder="Tiktok"
-                value="<?php echo $restaurante->tiktok ?? ''; ?>"
+                value="<?php echo $redes->tiktok ?? ''; ?>"
             >
        </div>
     </div>
@@ -171,7 +171,7 @@
                 class="formulario__input--sociales"
                 name="redes[web]"
                 placeholder="Web"
-                value="<?php echo $restaurante->web ?? ''; ?>"
+                value="<?php echo $redes->web ?? ''; ?>"
             >
        </div>
     </div>
