@@ -51,3 +51,6 @@
         <p class="text-center">No hay restaurantes registrados aún</p>
     <?php } ?>
 </div>
+
+<?php echo $paginacion;
+?>

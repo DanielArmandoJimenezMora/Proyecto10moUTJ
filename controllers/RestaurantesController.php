@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Classes\Paginacion;
 use MVC\Router;
 use Model\Restaurante;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -10,7 +11,30 @@ class RestaurantesController
 {
     public static function index(Router $router)
     {
-        $restaurantes = Restaurante::all();
+        $pagina_actual = $_GET['page'];
+        $pagina_actual = filter_var($pagina_actual, FILTER_VALIDATE_INT);
+
+        if (!$pagina_actual || $pagina_actual < 1) {
+            header('Location: /admin/restaurantes?page=1');
+        }
+
+        $registros_por_pagina = 3;
+        $total = Restaurante::total();
+
+        $paginacion = new Paginacion(
+            $pagina_actual,
+            $registros_por_pagina,
+            $total
+        );
+
+        if ($paginacion->total_paginas() < $pagina_actual) {
+            header('Location: /admin/restaurantes?page=1');
+        }
+
+        $restaurantes = Restaurante::paginar(
+            $registros_por_pagina,
+            $paginacion->offset()
+        );
 
         if (!is_admin()) {
             header('Location: /login');
@@ -19,6 +43,7 @@ class RestaurantesController
         $router->render('admin/restaurantes/index', [
             'titulo' => 'Restaurantes / Sucursales',
             'restaurantes' => $restaurantes,
+            'paginacion' => $paginacion->paginacion(),
         ]);
     }
     public static function crear(Router $router)

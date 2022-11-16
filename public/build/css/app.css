@@ -386,19 +386,30 @@ h3 {
   animation: pan 6s infinite alternate linear;
 }
 .auth__logo {
-  width: 22rem;
+  width: 15rem;
   display: block;
   margin: auto;
   margin-top: 5rem;
   margin-bottom: -5rem;
   text-align: center;
 }
+@media (min-width: 768px) {
+  .auth__logo {
+    width: 22rem;
+  }
+}
 .auth .login-card {
-  padding: 0px 30px 44px;
+  padding: 0px 20px 44px 20px;
   border-radius: 24px;
   background: #ffffff;
-  margin: 5rem;
+  margin: 3rem 0;
   border: 2px solid #ebebeb;
+}
+@media (min-width: 768px) {
+  .auth .login-card {
+    margin: 5rem;
+    padding: 0px 30px 44px;
+  }
 }
 .auth .acciones {
   gap: 5rem;
@@ -780,7 +791,12 @@ h3 {
 }
 .dashboard__header {
   background-color: #1e293b;
-  padding: 2rem;
+  padding: 0.5rem;
+}
+@media (min-width: 768px) {
+  .dashboard__header {
+    padding: 2rem;
+  }
 }
 .dashboard__header-grid {
   display: flex;
@@ -803,12 +819,17 @@ h3 {
   color: #ffffff;
   text-align: center;
   margin-bottom: 2rem;
-  font-size: clamp(2rem, -0.8rem + 10vw, 3rem);
+  font-size: 2rem;
 }
 @media (min-width: 1024px) {
   .dashboard__logo {
     text-align: left;
     margin: 0;
+  }
+}
+@media (min-width: 768px) {
+  .dashboard__logo {
+    font-size: clamp(2rem, -0.8rem + 10vw, 3rem);
   }
 }
 .dashboard__form {
@@ -832,7 +853,12 @@ h3 {
 }
 .dashboard__sidebar {
   background-color: #2f405d;
-  width: 12rem;
+  width: 7.5rem;
+}
+@media (min-width: 768px) {
+  .dashboard__sidebar {
+    width: 12rem;
+  }
 }
 .dashboard__menu {
   padding: 1rem;
@@ -857,10 +883,16 @@ h3 {
   font-size: 2rem;
 }
 .dashboard__menu-texto {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 200;
   margin-top: 0.5rem;
+}
+@media (min-width: 768px) {
+  .dashboard__menu-texto {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
 }
 .dashboard__contenido {
   width: 100%;
@@ -911,6 +943,7 @@ h3 {
   background-color: #ffffff;
   padding: 2rem;
   border-radius: 1rem;
+  overflow-x: scroll;
 }
 .dashboard__formulario {
   width: min(95%, 80rem);
@@ -960,5 +993,52 @@ h3 {
 }
 .table__accion:hover {
   cursor: pointer;
+}
+
+.paginacion {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .paginacion {
+    justify-content: flex-end;
+  }
+}
+.paginacion__enlace {
+  color: #007df4;
+  font-size: 1.6rem;
+}
+.paginacion__enlace--texto {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #007df4;
+}
+.paginacion__enlace--texto:hover {
+  background-color: #007df4;
+  color: #ffffff;
+}
+.paginacion__enlace--numero {
+  font-weight: 700;
+  display: none;
+}
+@media (min-width: 768px) {
+  .paginacion__enlace--numero {
+    display: inline;
+  }
+}
+.paginacion__enlace--actual {
+  color: #64748b;
+  font-weight: 700;
+  display: none;
+}
+@media (min-width: 768px) {
+  .paginacion__enlace--actual {
+    display: inline;
+  }
 }
 /*# sourceMappingURL=app.css.map */

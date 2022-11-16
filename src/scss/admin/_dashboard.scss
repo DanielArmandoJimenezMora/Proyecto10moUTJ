@@ -8,7 +8,10 @@
   background-color: v.$gris-claro;
   &__header {
     background-color: v.$gris-oscuro;
-    padding: 2rem;
+    padding: 0.5rem;
+    @include m.tablet {
+      padding: 2rem;
+    }
   }
   &__header-grid {
     display: flex;
@@ -27,7 +30,10 @@
   &__logo {
     display: flex;
     @include m.logo;
-    @include m.texto-fluido(2rem, 3rem);
+    font-size: 2rem;
+    @include m.tablet {
+      @include m.texto-fluido(2rem, 3rem);
+    }
   }
   &__nav {
   }
@@ -45,7 +51,10 @@
   }
   &__sidebar {
     background-color: lighten(v.$gris-oscuro, 10);
-    width: 12rem;
+    width: 7.5rem;
+    @include m.tablet {
+      width: 12rem;
+    }
   }
   &__menu {
     padding: 1rem;
@@ -72,10 +81,14 @@
     font-size: 2rem;
   }
   &__menu-texto {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    font-weight: v.$bold;
+    font-weight: 200;
     margin-top: 0.5rem;
+    @include m.tablet {
+      font-size: 1.1rem;
+      font-weight: v.$bold;
+    }
   }
   &__contenido {
     width: 100%;
@@ -110,6 +123,7 @@
     background-color: v.$blanco;
     padding: 2rem;
     border-radius: 1rem;
+    overflow-x: scroll;
   }
 
   &__formulario {
