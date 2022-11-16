@@ -53,6 +53,10 @@ $router->post('/admin/restaurantes/editar', [
     RestaurantesController::class,
     'editar',
 ]);
+$router->post('/admin/restaurantes/eliminar', [
+    RestaurantesController::class,
+    'eliminar',
+]);
 
 $router->get('/admin/eventos', [EventosController::class, 'index']);
 

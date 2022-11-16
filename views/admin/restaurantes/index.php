@@ -34,7 +34,8 @@
                                 Editar
                         </a>
 
-                        <form action="" class="table__formulario">
+                        <form method="POST" action="/admin/restaurantes/eliminar" class="table__formulario">
+                            <input type="hidden" name="id" value="<?php echo $restaurante->id; ?>">
                             <button type="submit" class="table__accion table__accion--eliminar">
                                 <i class="fa-solid fa-trash"></i>
                                 Eliminar

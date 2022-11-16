@@ -12,6 +12,10 @@ class RestaurantesController
     {
         $restaurantes = Restaurante::all();
 
+        if (!is_admin()) {
+            header('Location: /login');
+        }
+
         $router->render('admin/restaurantes/index', [
             'titulo' => 'Restaurantes / Sucursales',
             'restaurantes' => $restaurantes,
@@ -19,10 +23,16 @@ class RestaurantesController
     }
     public static function crear(Router $router)
     {
+        if (!is_admin()) {
+            header('Location: /login');
+        }
         $alertas = [];
         $restaurante = new Restaurante();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!is_admin()) {
+                header('Location: /login');
+            }
             // leer imagen
             if (!empty($_FILES['imagen']['tmp_name'])) {
                 $carpeta_imagenes = '../public/img/restaurantes';
@@ -82,6 +92,9 @@ class RestaurantesController
 
     public static function editar(Router $router)
     {
+        if (!is_admin()) {
+            header('Location: /login');
+        }
         $alertas = [];
         //validar ID
         $id = $_GET['id'];
@@ -101,6 +114,10 @@ class RestaurantesController
         $restaurante->imagen_actual = $restaurante->imagen;
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!is_admin()) {
+                header('Location: /login');
+            }
+
             if (!empty($_FILES['imagen']['tmp_name'])) {
                 $carpeta_imagenes = '../public/img/restaurantes';
 
@@ -154,5 +171,27 @@ class RestaurantesController
             'restaurante' => $restaurante,
             'redes' => json_decode($restaurante->redes),
         ]);
+    }
+
+    public static function eliminar()
+    {
+        if (!is_admin()) {
+            header('Location: /login');
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = $_POST['id'];
+            $restaurante = Restaurante::find($id);
+            if (!isset($restaurante)) {
+                header('Location: /admin/restaurantes');
+            }
+
+            $resultado = $restaurante->eliminar();
+
+            if ($resultado) {
+                header('Location: /admin/restaurantes');
+            }
+            debuguear($restaurante);
+        }
     }
 }
