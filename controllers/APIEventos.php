@@ -20,11 +20,12 @@ class APIEventos
         }
 
         // Consultar la base de datos
-        $eventos = EventoHorario::whereArray([
-            'dia_id' => $dia_id,
-            'categoria_id' => $categoria_id,
-            'hora_id' => 1,
-        ]);
+        $eventos =
+            EventoHorario::whereArray([
+                'dia_id' => $dia_id,
+                'categoria_id' => $categoria_id,
+                'hora_id' => 1,
+            ]) ?? [];
 
         echo json_encode($eventos);
     }

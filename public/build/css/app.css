@@ -551,15 +551,27 @@ h3 {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-.horas__hora {
+.horas__hora, .horas__hora--deshabilitada, .horas__hora--seleccionada {
   color: #007df4;
   border: 1px solid #007df4;
   border-radius: 1rem;
   padding: 1rem;
   text-align: center;
 }
-.horas__hora:hover {
+.horas__hora:hover, .horas__hora--deshabilitada:hover, .horas__hora--seleccionada:hover {
   cursor: pointer;
+}
+.horas__hora--seleccionada {
+  background-color: #007df4;
+  color: #ffffff;
+}
+.horas__hora--deshabilitada {
+  border: 1px solid #64748b;
+  color: #64748b;
+  opacity: 0.5;
+}
+.horas__hora--deshabilitada:hover {
+  cursor: not-allowed;
 }
 
 .header {
@@ -1070,5 +1082,36 @@ h3 {
   .paginacion__enlace--actual {
     display: inline;
   }
+}
+
+.listado-restaurantes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+.listado-restaurantes__restaurante, .listado-restaurantes__restaurante--seleccionado {
+  color: #007df4;
+  border: 1px solid #007df4;
+  padding: 1rem;
+  text-align: center;
+}
+.listado-restaurantes__restaurante:hover, .listado-restaurantes__restaurante--seleccionado:hover {
+  cursor: pointer;
+}
+.listado-restaurantes__restaurante--seleccionado {
+  background-color: #007df4;
+  color: #ffffff;
+}
+.listado-restaurantes__no-resultado {
+  width: 25rem;
+  display: flex;
+  margin: 0 auto;
+}
+.listado-restaurantes__no-resultado--p {
+  text-align: center;
+  color: red;
 }
 /*# sourceMappingURL=app.css.map */

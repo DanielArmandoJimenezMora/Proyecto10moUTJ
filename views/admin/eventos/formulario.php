@@ -64,9 +64,10 @@
 
         <ul id="horas" class="horas">
             <?php foreach ($horas as $hora) { ?>
-                <li class="horas__hora"><?php echo $hora->hora; ?></li>
+                <li data-hora-id="<?php echo $hora->id; ?>" class="horas__hora horas__hora--deshabilitada"><?php echo $hora->hora; ?></li>
             <?php } ?>
         </ul>
+        <input type="hidden" name="hora_id" value="">
     </div>
 
 </fieldset>
@@ -82,6 +83,8 @@
             id="restaurantes"
             placeholder="Buscar Restaurante"
         >
+        <ul id="listado-restaurantes" class="listado-restaurantes"></ul>
+        <input type="hidden" name="restaurante_id" value="">
     </div>
 
     <div class="formulario__campo">
