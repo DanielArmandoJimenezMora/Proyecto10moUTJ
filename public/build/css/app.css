@@ -519,7 +519,7 @@ h3 {
   background-color: #007df4;
   color: #ffffff;
   transition: 300ms background-color ease;
-  min-height: 2o0px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
