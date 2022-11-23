@@ -44,16 +44,7 @@
         <div class="formulario__radio">
             <?php foreach ($dias as $dia) { ?>
                 <div>
-                    <!-- <input 
-                        type="radio"
-                        id="<?php echo strtolower($dia->nombre); ?>"
-                        name="dia"
-                        value="<?php echo $dia->id; ?>"
-                        <?php echo $evento->dia_id === $dia->id
-                            ? 'checked'
-                            : ''; ?>
-                        > -->
-                        <input 
+                    <input 
                         type="radio"
                         id="<?php echo strtolower($dia->nombre); ?>"
                         name="dia"
@@ -79,7 +70,7 @@
                 <li data-hora-id="<?php echo $hora->id; ?>" class="horas__hora horas__hora--deshabilitada"><?php echo $hora->hora; ?></li>
             <?php } ?>
         </ul>
-        <input type="hidden" name="hora_id" value="">
+        <input type="hidden" name="hora_id" value="<?php echo $evento->hora_id; ?>">
     </div>
 
 </fieldset>
@@ -96,7 +87,7 @@
             placeholder="Buscar Restaurante"
         >
         <ul id="listado-restaurantes" class="listado-restaurantes"></ul>
-        <input type="hidden" name="restaurante_id" value="">
+        <input type="hidden" name="restaurante_id" value="<?php echo $evento->restaurante_id; ?>">
     </div>
 
     <div class="formulario__campo">

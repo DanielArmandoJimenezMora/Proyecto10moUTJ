@@ -14,6 +14,9 @@ class EventosController
 {
     public static function index(Router $router)
     {
+        if (!is_admin()) {
+            header('Location: /login');
+        }
         $pagina_actual = $_GET['page'];
         $pagina_actual = filter_var($pagina_actual, FILTER_VALIDATE_INT);
 
@@ -42,6 +45,10 @@ class EventosController
 
     public static function crear(Router $router)
     {
+        if (!is_admin()) {
+            header('Location: /login');
+        }
+
         $alertas = [];
 
         $categorias = Categoria::all();
@@ -50,6 +57,9 @@ class EventosController
         $evento = new Evento();
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (!is_admin()) {
+                header('Location: /login');
+            }
             $evento->sincronizar($_POST);
             $alertas = $evento->validar();
             if (empty($alertas)) {
@@ -72,6 +82,10 @@ class EventosController
 
     public static function editar(Router $router)
     {
+        if (!is_admin()) {
+            header('Location: /login');
+        }
+
         $alertas = [];
 
         $id = $_GET['id'];
@@ -91,6 +105,9 @@ class EventosController
         }
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (!is_admin()) {
+                header('Location: /login');
+            }
             $evento->sincronizar($_POST);
             $alertas = $evento->validar();
             if (empty($alertas)) {
@@ -109,5 +126,26 @@ class EventosController
             'horas' => $horas,
             'evento' => $evento,
         ]);
+    }
+
+    public static function eliminar()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!is_admin()) {
+                header('Location: /login');
+            }
+            $id = $_POST['id'];
+            $evento = evento::find($id);
+            if (!isset($evento)) {
+                header('Location: /admin/eventos');
+            }
+
+            $resultado = $evento->eliminar();
+
+            if ($resultado) {
+                header('Location: /admin/eventos');
+            }
+            debuguear($evento);
+        }
     }
 }

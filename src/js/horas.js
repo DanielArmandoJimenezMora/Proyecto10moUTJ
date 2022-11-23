@@ -16,6 +16,22 @@
       dia: +inputHiddenDia.value || '',
     }
 
+    if (!Object.values(busqueda).includes('')) {
+      async function inicia() {
+        await buscarEventos()
+        const id = inputHiddenDia.value
+
+        // resaltar hora actual
+        const horaSeleccionada = document.querySelector(
+          `[data-hora-id="${id}"]`,
+        )
+        horaSeleccionada.classList.remove('horas__hora--deshabilitada')
+        horaSeleccionada.classList.add('horas__hora--seleccionada')
+        horaSeleccionada.onclick = seleccionarHora
+      }
+      inicia()
+    }
+
     function terminoBusqueda(e) {
       busqueda[e.target.name] = e.target.value
 

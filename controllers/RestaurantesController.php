@@ -200,11 +200,10 @@ class RestaurantesController
 
     public static function eliminar()
     {
-        if (!is_admin()) {
-            header('Location: /login');
-        }
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!is_admin()) {
+                header('Location: /login');
+            }
             $id = $_POST['id'];
             $restaurante = Restaurante::find($id);
             if (!isset($restaurante)) {

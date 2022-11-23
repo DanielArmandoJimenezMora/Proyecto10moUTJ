@@ -12,6 +12,22 @@
 
     restaurantesInput.addEventListener('input', buscarRestaurantes)
 
+    if (restaurateHidden.value) {
+      ;(async () => {
+        const restaurante = await obtenerRestaurante(restaurateHidden.value)
+
+        //insertar en html
+        const restauranteDOM = document.createElement('LI')
+        restauranteDOM.classList.add(
+          'listado-restaurantes__restaurante',
+          'listado-restaurantes__restaurante--seleccionado',
+        )
+        restauranteDOM.textContent = `${restaurante.nombre} / ${restaurante.sucursal}`
+
+        listadoRestaurantes.appendChild(restauranteDOM)
+      })()
+    }
+
     async function obtenerRestaurantes() {
       const url = `/api/restaurantes`
 
@@ -19,6 +35,13 @@
       const resultado = await respuesta.json()
 
       formatearRestaurantes(resultado)
+    }
+
+    async function obtenerRestaurante(id) {
+      const url = `/api/restaurante?id=${id}`
+      const respuesta = await fetch(url)
+      const resultado = await respuesta.json()
+      return resultado
     }
 
     function formatearRestaurantes(arrayRestaurantes) {
