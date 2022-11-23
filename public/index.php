@@ -9,7 +9,7 @@ use Controllers\AuthController;
 use Controllers\DashboardController;
 use Controllers\RestaurantesController;
 use Controllers\EventosController;
-use Controllers\PaquetesController;
+use Controllers\PaginasController;
 use Controllers\RegistradosController;
 
 $router = new Router();
@@ -76,6 +76,12 @@ $router->get('/api/restaurante', [APIRestaurantes::class, 'restaurante']);
 
 $router->get('/admin/registrados', [RegistradosController::class, 'index']);
 
-$router->get('/admin/paquetes', [PaquetesController::class, 'index']);
+$router->get('/admin/paquetes', [PaginasController::class, 'index']);
+
+// Area Pública
+$router->get('/', [PaginasController::class, 'index']);
+$router->get('/ticketreserve', [PaginasController::class, 'evento']);
+$router->get('/paquetes', [PaginasController::class, 'paquetes']);
+$router->get('/restaurantes', [PaginasController::class, 'restaurantes']);
 
 $router->comprobarRutas();
