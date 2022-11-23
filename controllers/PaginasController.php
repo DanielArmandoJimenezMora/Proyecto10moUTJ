@@ -1,7 +1,13 @@
 <?php
 
 namespace Controllers;
+
+use Model\Dia;
+use Model\Hora;
 use MVC\Router;
+use Model\Evento;
+use Model\Categoria;
+use Model\Restaurante;
 
 class PaginasController
 {
@@ -25,8 +31,20 @@ class PaginasController
     }
     public static function restaurantes(Router $router)
     {
-        $router->render('paginas/paquetes', [
+        $eventos = Evento::ordenar('hora_id', 'ASC');
+
+        $eventoF = [];
+        foreach ($eventos as $evento) {
+            $evento->categoria = Categoria::find($evento->categoria_id);
+            $evento->dia = Dia::find($evento->dia_id);
+            $evento->hora = Hora::find($evento->hora_id);
+            $evento->restaurante = Restaurante::find($evento->restaurante_id);
+            $eventoF[] = $evento;
+        }
+
+        $router->render('paginas/restaurantes', [
             'titulo' => 'Restaurantes',
+            'eventos' => $eventoF,
         ]);
     }
 }
